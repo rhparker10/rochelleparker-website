@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaking & Advisory — Rochelle Parker</title>
+  <meta name="description" content="Book Rochelle Parker to speak at your event or explore board and advisory opportunities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      background: var(--cream);
+      border-bottom: 0.5px solid var(--gray-2);
+      padding: 80px 40px 72px;
+    }
+    .page-header h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 400; }
+    .page-header p { font-size: 16px; color: var(--text-mid); max-width: 560px; line-height: 1.75; margin-top: 12px; }
+
+    /* SPEAKING */
+    .speaking-section { padding: 80px 40px; }
+    .speaking-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .topics-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 0.5px solid var(--gray-2);
+    }
+    .topic-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px;
+      border-bottom: 0.5px solid var(--gray-2);
+      transition: background 0.2s;
+    }
+    .topic-item:last-child { border-bottom: none; }
+    .topic-item:hover { background: var(--cream); }
+    .topic-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--gold);
+      padding-top: 2px;
+      min-width: 24px;
+    }
+    .topic-content h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .topic-content p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+    /* INQUIRY FORM */
+    .inquiry-card {
+      border: 0.5px solid var(--gray-2);
+      padding: 40px 36px;
+      background: var(--white);
+      position: sticky;
+      top: 80px;
+    }
+    .inquiry-card h3 { font-size: 22px; margin-bottom: 6px; }
+    .inquiry-card .sub { font-size: 14px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.6; }
+
+    /* ADVISORY */
+    .advisory-section { padding: 80px 40px; background: var(--cream); border-top: 0.5px solid var(--gray-2); }
+    .advisory-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .advisory-text h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 8px; }
+    .advisory-text p { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; }
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+    }
+    .advisory-item {
+      background: var(--white);
+      padding: 24px 20px;
+    }
+    .advisory-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+      border-left: 2px solid var(--burgundy);
+      padding-left: 10px;
+    }
+    .advisory-item p { font-size: 12px; color: var(--text-light); line-height: 1.6; padding-left: 12px; }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 56px 24px 48px; }
+      .speaking-section, .advisory-section { padding: 56px 24px; }
+      .speaking-layout { grid-template-columns: 1fr; }
+      .inquiry-card { position: static; }
+      .advisory-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Rochelle Parker</span>
+        <span class="nav-logo-title">Career Coach</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work-with-me.html">Work With Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="speaking.html" class="active">Speaking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="work-with-me.html#sessions" class="nav-cta">Book a session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow">Speaking &amp; Advisory</span>
+    <h1>Bringing real experience<br>to your stage.</h1>
+    <p>From university career panels to executive leadership summits — engaging, practical, and grounded in 15+ years of experience hiring and leading in Fortune 100 organizations.</p>
+  </div>
+</div>
+
+<!-- SPEAKING -->
+<section class="speaking-section">
+  <div class="container">
+    <span class="eyebrow">Speaking topics</span>
+    <h2 style="font-size: clamp(22px, 3vw, 32px);">What I speak about</h2>
+    <div class="speaking-layout">
+      <div>
+        <div class="topics-list">
+          <div class="topic-item">
+            <span class="topic-num">01</span>
+            <div class="topic-content">
+              <h4>How to stand out in today's job market</h4>
+              <p>What hiring managers actually look for — and how to position yourself to be the obvious choice.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">02</span>
+            <div class="topic-content">
+              <h4>From IC to leader: the career pivot playbook</h4>
+              <p>The skills, mindset shifts, and credibility signals that separate great engineers from great leaders.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">03</span>
+            <div class="topic-content">
+              <h4>Building high-performing engineering teams</h4>
+              <p>Hiring practices, team design, and culture-building strategies from someone who's scaled teams at scale.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">04</span>
+            <div class="topic-content">
+              <h4>Adding value as a leader</h4>
+              <p>How to grow your influence and advance your career without compromising your integrity.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">05</span>
+            <div class="topic-content">
+              <h4>Women in tech &amp; engineering leadership</h4>
+              <p>Practical strategies for visibility, advancement, and building a seat at the table.</p>
+            </div>
+          </div>
+          <div class="topic-item">
+            <span class="topic-num">06</span>
+            <div class="topic-content">
+              <h4>Building your career with intention</h4>
+              <p>Why most careers stall — and how to design one that grows on your terms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inquiry-card">
+        <h3>Inquire about speaking</h3>
+        <p class="sub">Tell me about your event and I'll be in touch within a few business days.</p>
+        <form id="speaking-form" action="https://formspree.io/f/mljerydw" method="POST">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@organization.com">
+        </div>
+        <div class="form-group">
+          <label>Organization</label>
+          <input type="text" name="organization" placeholder="Company or university">
+        </div>
+        <div class="form-group">
+          <label>Event type</label>
+          <select name="event_type">
+            <option value="">Select...</option>
+            <option>Conference / Summit</option>
+            <option>University / Career event</option>
+            <option>Corporate workshop</option>
+            <option>Podcast / Panel</option>
+            <option>Webinar</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>About the event</label>
+          <textarea name="message" placeholder="Audience, date, topic interest, expected attendance..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Speaking Inquiry">
+        <button type="submit" class="btn btn-navy" style="width:100%;">Send inquiry</button>
+        <div id="speaking-success" style="display:none; margin-top:16px; padding:16px; background:#f0f7f0; border:0.5px solid #b0d4b0; border-radius:2px; color:#2d5a2d; font-size:14px;">
+          Inquiry sent — I'll be in touch within a few business days.
+        </div>
+        </form>
+        <script>
+          document.getElementById('speaking-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var btn = this.querySelector('button[type="submit"]');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            try {
+              var res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+              if (res.ok) {
+                this.reset();
+                document.getElementById('speaking-success').style.display = 'block';
+                btn.style.display = 'none';
+              } else {
+                btn.textContent = 'Send inquiry';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+              }
+            } catch(err) {
+              btn.textContent = 'Send inquiry';
+              btn.disabled = false;
+              alert('Something went wrong. Please try again.');
+            }
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY -->
+<section class="advisory-section">
+  <div class="container">
+    <div class="advisory-layout">
+      <div class="advisory-text">
+        <span class="eyebrow">Board &amp; Advisory</span>
+        <h2>Strategic expertise for growing organizations</h2>
+        <div class="gold-rule"></div>
+        <p>With 15+ years scaling technical teams, designing hiring processes, and leading organizations through growth and change at Fortune 100 companies, I bring a grounded, practical perspective to boards and advisory roles.</p>
+        <p>I'm particularly well-suited for organizations focused on talent strategy, engineering culture, DEI in tech, and organizational development.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:8px;">Get in touch</a>
+      </div>
+      <div class="advisory-grid">
+        <div class="advisory-item">
+          <h4>Talent Strategy</h4>
+          <p>Hiring systems, team design, and talent pipeline development at scale</p>
+        </div>
+        <div class="advisory-item">
+          <h4>Engineering Leadership</h4>
+          <p>Scaling engineering orgs from small teams to 50+ in complex environments</p>
+        </div>
+        <div class="advisory-item">
+          <h4>DEI in Tech</h4>
+          <p>Building inclusive hiring practices and equitable team cultures</p>
+        </div>
+        <div class="advisory-item">
+          <h4>Org Development</h4>
+          <p>Navigating growth, restructuring, and intentional culture change</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-mark">
+            <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+          </div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name footer-logo-name">Rochelle Parker</span>
+            <span class="nav-logo-title footer-logo-title">Career Coach</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">Helping tech and engineering professionals build intentional careers — from first job to the boardroom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="speaking.html">Speaking &amp; Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/rochelleparker/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Rochelle Parker. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var uid = window.innerWidth >= 768 ? '356d75e715' : '4edfffda4b';
+  var s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-uid', uid);
+  s.src = 'https://rochelle-parker.kit.com/' + uid + '/index.js';
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

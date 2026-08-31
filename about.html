@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Rochelle Parker</title>
+  <meta name="description" content="Career coach and executive mentor. 15+ years at Apple, Boeing, Cisco, and Raytheon. B.S. Engineering, MBA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--cream);
+      border-bottom: 0.5px solid var(--gray-2);
+      padding: 72px 40px 64px;
+    }
+    .page-header .eyebrow { margin-bottom: 10px; }
+    .page-header h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 400; }
+
+    /* ABOUT LAYOUT */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      padding: 80px 40px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .about-sidebar { position: sticky; top: 84px; align-self: start; }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--gray-1);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--gray-3);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .about-credentials {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--cream);
+      border: 0.5px solid var(--gray-2);
+      border-radius: 2px;
+    }
+    .credential-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .credential-item span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.2px;
+    }
+
+    /* ABOUT BODY */
+    .about-body h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      margin-bottom: 8px;
+    }
+    .about-body p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin: 48px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 0.5px solid var(--gray-2);
+    }
+    .timeline-item:last-child { border-bottom: 0.5px solid var(--gray-2); }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+    .timeline-content h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .timeline-content p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* VALUES */
+    .values-section { padding: 72px 40px; background: var(--cream); border-top: 0.5px solid var(--gray-2); }
+    .values-grid {
+      max-width: 1080px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+    }
+    .value-card {
+      background: var(--cream);
+      padding: 36px 28px;
+    }
+    .value-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .value-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--navy);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .cta-strip h2 { color: var(--white); font-size: clamp(22px, 3vw, 32px); margin-bottom: 10px; }
+    .cta-strip p { color: rgba(255,255,255,0.55); font-size: 15px; margin-bottom: 28px; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .about-layout { grid-template-columns: 1fr; padding: 48px 24px; }
+      .about-sidebar { position: static; }
+      .about-photo { aspect-ratio: 3/2; }
+      .values-grid { grid-template-columns: 1fr; }
+      .page-header { padding: 48px 24px 40px; }
+      .values-section { padding: 56px 24px; }
+      .cta-strip { padding: 56px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Rochelle Parker</span>
+        <span class="nav-logo-title">Career Coach</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="work-with-me.html">Work With Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="work-with-me.html#sessions" class="nav-cta">Book a session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow">About Rochelle</span>
+    <h1>I've been where you are —<br>and I know how to get you further.</h1>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="about-layout">
+  <aside class="about-sidebar">
+    <div class="about-photo">
+      <img src="images/rochelle.jpg" alt="Rochelle Parker">
+    </div>
+    <div class="about-credentials">
+      <div class="credential-item"><div class="credential-dot"></div><span>B.S. Engineering</span></div>
+      <div class="credential-item"><div class="credential-dot"></div><span>MBA</span></div>
+      <div class="credential-item"><div class="credential-dot"></div><span>15+ years Fortune 100</span></div>
+      <div class="credential-item"><div class="credential-dot"></div><span>50+ engineers managed</span></div>
+      <div class="credential-item"><div class="credential-dot"></div><span>5.0 ★ Mentor rating</span></div>
+    </div>
+  </aside>
+
+  <div class="about-body">
+    <span class="eyebrow">My story</span>
+    <h2>Building an intentional career — and helping others do the same</h2>
+    <div class="gold-rule"></div>
+
+    <p>I'm a career coach and mentor for professionals in tech and engineering. My career has taken me through some of the most complex, high-stakes organizations in the world — Apple, Boeing, Cisco, Raytheon — and it didn't happen by accident.</p>
+
+    <p>I earned a B.S. in Engineering and an MBA, then spent 15+ years building an intentional path from individual contributor to senior leader. Along the way I hired thousands of people, managed teams of 50+, spoke in front of rooms of 200 executives, led multi-million dollar programs, and grew my own salary by over 500%. I learned — sometimes the hard way — what separates people who advance from people who stall.</p>
+
+    <p>Now I use everything I learned to shorten the learning curve for the people I coach. Whether you're trying to land your next role, lead a team more effectively, or figure out what you actually want from your career — I can help you get there faster and with more clarity than I had.</p>
+
+    <p>I believe careers are built, not found. With the right strategy, self-knowledge, and support, you can build one that's genuinely yours.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">Now</div>
+        <div class="timeline-content">
+          <h4>Career Coach &amp; Executive Mentor</h4>
+          <p>1:1 coaching, mentorship plans, and speaking engagements for tech and engineering professionals worldwide.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">15+ yrs</div>
+        <div class="timeline-content">
+          <h4>Fortune 100 Engineering Leader</h4>
+          <p>Senior roles at Apple, Boeing, Cisco, and Raytheon. Managed 50+ engineers, led hiring at scale, and navigated organizational complexity at every level.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">MBA</div>
+        <div class="timeline-content">
+          <h4>Graduate Education</h4>
+          <p>MBA to complement a B.S. in Engineering — bridging technical depth with business strategy.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">USMC</div>
+        <div class="timeline-content">
+          <h4>Officer Candidate, United States Marine Corps</h4>
+          <p>Leadership under pressure, discipline, and operational thinking — a foundation that shaped my approach to managing teams and navigating high-stakes environments.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Start</div>
+        <div class="timeline-content">
+          <h4>B.S. Engineering, UC Irvine</h4>
+          <p>Foundation in engineering that opened the doors — and a mindset for problem-solving that still shapes how I coach.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>Outside of coaching, I'm open to speaking engagements, board seats, and advisory roles where I can bring strategic perspective on talent, engineering leadership, and organizational growth. <a href="speaking.html" style="color: var(--gold);">Learn more →</a></p>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <span class="eyebrow">What I believe</span>
+    <h2 class="section-title" style="font-size: clamp(22px, 3vw, 30px);">The principles behind the work</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Intentionality over drift</h3>
+        <p>Most people let their careers happen to them. The best careers are designed — with clarity about what you want and a strategy to get there.</p>
+      </div>
+      <div class="value-card">
+        <h3>Experience over theory</h3>
+        <p>I coach from 15+ years inside the organizations you want to work in. Every recommendation I give is grounded in what I've actually seen work.</p>
+      </div>
+      <div class="value-card">
+        <h3>Honesty over comfort</h3>
+        <p>I'll tell you what you need to hear, not just what you want to hear. That's the only way real growth happens — and it's what you deserve from a coach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container-sm">
+    <h2>Ready to build your career with intention?</h2>
+    <p>Book a session or explore ongoing mentorship plans.</p>
+    <div class="cta-actions">
+      <a href="work-with-me.html" class="btn btn-gold">Work with me</a>
+      <a href="contact.html" class="btn btn-outline-white">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-mark">
+            <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+          </div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name footer-logo-name">Rochelle Parker</span>
+            <span class="nav-logo-title footer-logo-title">Career Coach</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">Helping tech and engineering professionals build intentional careers — from first job to the boardroom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="speaking.html">Speaking &amp; Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/rochelleparker/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Rochelle Parker. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var uid = window.innerWidth >= 768 ? '356d75e715' : '4edfffda4b';
+  var s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-uid', uid);
+  s.src = 'https://rochelle-parker.kit.com/' + uid + '/index.js';
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work With Me — Rochelle Parker</title>
+  <meta name="description" content="Book a focused 1:1 session with Rochelle Parker. Resume, LinkedIn, interview prep, and career strategy coaching for tech and engineering professionals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      background: var(--navy);
+      padding: 80px 40px 72px;
+    }
+    .page-header .eyebrow { color: var(--gold); }
+    .page-header h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .page-header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    /* VIDEO */
+    .video-section {
+      background: var(--navy);
+      padding: 0 40px 32px;
+    }
+    .video-container {
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    .video-label {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.7);
+      margin-bottom: 16px;
+      white-space: nowrap;
+    }
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(255,255,255,0.03);
+      border: 0.5px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .play-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,168,76,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(201,168,76,0.7);
+      font-size: 11px;
+      padding-left: 3px;
+    }
+    .video-placeholder p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.3px;
+      text-align: center;
+    }
+
+    /* HOW I WORK */
+    .how-section {
+      padding: 80px 40px;
+      background: var(--cream);
+      border-bottom: 0.5px solid var(--gray-2);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+      margin-top: 48px;
+    }
+    .how-step {
+      background: var(--white);
+      padding: 36px 32px;
+    }
+    .how-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.45;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .how-step h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .how-step p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .availability-callout {
+      margin-top: 32px;
+      padding: 24px 32px;
+      border-left: 2px solid var(--gold);
+      background: var(--white);
+    }
+    .availability-callout p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .availability-callout strong { color: var(--navy); }
+
+    /* SESSIONS */
+    .sessions-section { padding: 80px 40px; }
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+      margin-top: 48px;
+    }
+    .session-card {
+      background: var(--white);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    .session-card.featured { background: var(--cream); }
+    .session-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .session-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .session-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .session-price-sub {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .pre-work-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 0.5px solid rgba(201,168,76,0.35);
+      padding: 3px 9px;
+      border-radius: 2px;
+      margin-bottom: 18px;
+      align-self: flex-start;
+    }
+    .session-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .session-includes {
+      list-style: none;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .session-includes li {
+      font-size: 13px;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+    .session-includes li::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* BUNDLE */
+    .plans-section {
+      padding: 80px 40px;
+      background: var(--cream);
+      border-top: 0.5px solid var(--gray-2);
+    }
+    .plan-card {
+      background: var(--white);
+      border: 0.5px solid var(--gray-2);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      max-width: 700px;
+    }
+    .plan-card.highlight {
+      border-color: var(--navy);
+      border-width: 1px;
+    }
+    .plan-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--navy);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+    .plan-card h3 { font-size: 22px; margin-bottom: 8px; }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .plan-price-sub { font-size: 12px; color: var(--text-light); margin-bottom: 20px; }
+    .plan-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .plan-features li {
+      font-size: 14px;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-size: 13px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* COURSES */
+    .courses-section {
+      padding: 80px 40px;
+      border-top: 0.5px solid var(--gray-2);
+    }
+    .courses-intro {
+      max-width: 600px;
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-top: 12px;
+    }
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+      margin-top: 48px;
+    }
+    .course-card {
+      background: var(--white);
+      padding: 36px 28px;
+    }
+    .course-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      border: 0.5px solid var(--gray-2);
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .course-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .course-card p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .course-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .course-topic {
+      font-size: 11px;
+      color: var(--navy);
+      background: var(--cream);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* FAQ */
+    .faq-section { padding: 80px 40px; border-top: 0.5px solid var(--gray-2); background: var(--cream); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .faq-item { padding-bottom: 28px; border-bottom: 0.5px solid var(--gray-2); }
+    .faq-item h4 { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .faq-item p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .page-header { padding: 56px 24px 48px; }
+      .video-section { padding: 0 24px 56px; }
+      .how-section, .sessions-section, .plans-section, .courses-section, .faq-section { padding: 56px 24px; }
+      .how-grid { grid-template-columns: 1fr; }
+      .sessions-grid { grid-template-columns: 1fr; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Rochelle Parker</span>
+        <span class="nav-logo-title">Career Coach</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work-with-me.html" class="active">Work With Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="work-with-me.html#sessions" class="nav-cta">Book a session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow">Work with me</span>
+    <h1>Personalized coaching.<br>Prepared before we meet.</h1>
+    <p>Every session starts before we sit down together. You submit your materials. I review them, identify exactly what needs to change, and show up ready to go. No cold reviews. No filler.</p>
+  </div>
+</div>
+
+<!-- VIDEO PLACEHOLDER -->
+<div class="video-section">
+  <span class="video-label">Wondering if we're a good fit?</span>
+  <div class="video-container">
+    <div class="video-placeholder">
+      <div class="play-btn">&#9654;</div>
+      <p>Video coming soon — a quick intro to who I am and how I work</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOW I WORK -->
+<section class="how-section">
+  <div class="container">
+    <span class="eyebrow">The process</span>
+    <h2 style="font-size: clamp(22px, 3vw, 32px);">Every session is a focused debrief — not a cold review</h2>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <h4>You submit your materials</h4>
+        <p>Resume, LinkedIn, job description, prep questions — whatever's relevant to your session. Sent at least 24 hours before we meet.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <h4>I review and prepare</h4>
+        <p>I go through everything before our session, identify the specific gaps, and build a focused action plan tailored to your situation.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <h4>We meet and move fast</h4>
+        <p>No time spent getting up to speed. We go straight to what matters — the exact changes to make, the strategy to use, and what to do next.</p>
+      </div>
+    </div>
+    <div class="availability-callout">
+      <p><strong>I take a limited number of clients each month.</strong> I work full-time, and I do this because I genuinely enjoy helping people — not to scale a coaching business. Sessions are for professionals who are serious about making a change and show up prepared. If you want focused, one-on-one attention from someone who has been on the other side of the hiring table, this is for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section class="sessions-section" id="sessions">
+  <div class="container">
+    <span class="eyebrow">1:1 Sessions · from $199</span>
+    <h2 style="font-size: clamp(22px, 3vw, 32px);">Pick the session that fits where you are</h2>
+    <div class="sessions-grid">
+
+      <!-- Resume + LinkedIn -->
+      <div class="session-card featured">
+        <div class="session-label">Most popular</div>
+        <h3>Resume &amp; LinkedIn Review</h3>
+        <div class="session-price">$199</div>
+        <div class="session-price-sub">25-min debrief · materials submitted 24hrs prior</div>
+        <span class="pre-work-tag">Pre-work included</span>
+        <p class="session-desc">I review your resume and LinkedIn before we meet, identify exactly what's costing you interviews, and show up with a specific action plan. The session is a focused debrief — not a live scroll-through.</p>
+        <ul class="session-includes">
+          <li>Pre-session resume &amp; LinkedIn review</li>
+          <li>ATS optimization &amp; keyword strategy</li>
+          <li>LinkedIn headline, summary &amp; positioning</li>
+          <li>Prioritized rewrite recommendations</li>
+          <li>Job search targeting advice</li>
+        </ul>
+        <a href="https://buy.stripe.com/6oUbJ12uy58JfEW08G4wM01" target="_blank" class="btn btn-gold">Book now →</a>
+      </div>
+
+      <!-- Interview Prep -->
+      <div class="session-card">
+        <div class="session-label">Interview Prep</div>
+        <h3>Interview Prep &amp; Practice</h3>
+        <div class="session-price">$199</div>
+        <div class="session-price-sub">50-min session · materials submitted 24hrs prior</div>
+        <span class="pre-work-tag">Pre-work included</span>
+        <p class="session-desc">Send me the job description and your background before we meet. I'll tailor the session to the specific role and company. We practice, I give real-time feedback, and you leave knowing exactly how to walk in and land it.</p>
+        <ul class="session-includes">
+          <li>Pre-session role &amp; company research</li>
+          <li>Targeted behavioral &amp; technical prep</li>
+          <li>Live mock interview with real-time feedback</li>
+          <li>Storytelling &amp; STAR framework coaching</li>
+          <li>Salary negotiation guidance</li>
+        </ul>
+        <a href="https://buy.stripe.com/4gMeVd0mq9oZakCbRo4wM00" target="_blank" class="btn btn-navy">Book now →</a>
+      </div>
+
+      <!-- Career Strategy -->
+      <div class="session-card">
+        <div class="session-label">Career Direction</div>
+        <h3>Career Strategy Session</h3>
+        <div class="session-price">$249</div>
+        <div class="session-price-sub">25-min debrief · context submitted 24hrs prior</div>
+        <span class="pre-work-tag">Pre-work included</span>
+        <p class="session-desc">Not actively job hunting but feeling stuck, underpaid, or unsure of your next move? Send me your situation beforehand and I'll come with a clear read on your options — promotion, pivot, or everything in between.</p>
+        <ul class="session-includes">
+          <li>Pre-session context review</li>
+          <li>Promotion &amp; leveling strategy</li>
+          <li>Career pivot planning</li>
+          <li>Visibility &amp; influence building</li>
+          <li>Personalized roadmap &amp; next steps</li>
+        </ul>
+        <a href="https://buy.stripe.com/8x2dR9glogRrdwOg7E4wM03" target="_blank" class="btn btn-navy">Book now →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COURSES COMING SOON -->
+<section class="courses-section">
+  <div class="container">
+    <span class="eyebrow">Self-paced courses · coming soon</span>
+    <h2 style="font-size: clamp(22px, 3vw, 32px);">Learn the frameworks first.<br>Then get personalized help.</h2>
+    <p class="courses-intro">I'm building self-paced courses so you can work through the fundamentals on your own — resume writing, interview strategy, career planning — and then come to a 1:1 session for targeted, personalized guidance on top of what you've already learned. My best clients will be the ones who've done the work.</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <span class="course-badge">Coming soon</span>
+        <h4>Resume Masterclass</h4>
+        <p>Build an ATS-beating resume from scratch. Learn how to position yourself for the roles you actually want and stop getting filtered out before a human ever reads your name.</p>
+        <div class="course-topics">
+          <span class="course-topic">Resume writing</span>
+          <span class="course-topic">ATS optimization</span>
+          <span class="course-topic">Positioning</span>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="course-badge">Coming soon</span>
+        <h4>Interview Prep Playbook</h4>
+        <p>The exact frameworks, scripts, and practice methods I use with 1:1 clients — adapted into a self-paced system you can run on your own before any interview loop.</p>
+        <div class="course-topics">
+          <span class="course-topic">Behavioral prep</span>
+          <span class="course-topic">STAR method</span>
+          <span class="course-topic">Mock practice</span>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="course-badge">Coming soon</span>
+        <h4>Career Strategy</h4>
+        <p>How to get promoted, when to leave, how to navigate org politics without compromising your integrity, and how to build a career that grows on your terms.</p>
+        <div class="course-topics">
+          <span class="course-topic">Promotion planning</span>
+          <span class="course-topic">Career pivots</span>
+          <span class="course-topic">Leadership</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 32px; font-size: 14px; color: var(--text-mid);">
+      Want to know when courses launch? <a href="courses.html" style="color: var(--gold);">Join the waitlist →</a>
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <span class="eyebrow">Common questions</span>
+    <h2 style="font-size: clamp(22px, 3vw, 32px);">What to expect</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>What do I need to submit before my session?</h4>
+        <p>Depends on the session. For Resume &amp; LinkedIn: your current resume and LinkedIn URL. For Interview Prep: the job description and your resume. For Career Strategy: a brief written summary of your situation and what you're trying to figure out. All materials need to arrive at least 24 hours before your session.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What happens after I pay?</h4>
+        <p>You'll be redirected to a booking page immediately after payment to pick your time. You'll also receive a booking link in your receipt email in case you need it later.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who do you typically work with?</h4>
+        <p>Tech and engineering professionals at all career stages — from engineers landing their first role to senior leaders navigating promotion or transition. Ideally people who are serious, come prepared, and have a specific outcome in mind.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How is this different from other career coaches?</h4>
+        <p>I've been inside the organizations you want to work in. I've hired thousands of people, managed teams of 50+, and built my own career at Apple, Boeing, Cisco, and Raytheon. I also do the work before we meet — so you're not paying for me to read your resume live.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What is your cancellation policy?</h4>
+        <p>Because I review your materials before we meet, I put in work before we ever sit down together. Reschedule anytime up to 24 hours before your session at no charge. Cancellations within 24 hours are non-refundable, as are no-shows. If something unexpected comes up, reach out and I'll do my best to work with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-mark">
+            <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+              <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+              <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+              <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+            </svg>
+          </div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name footer-logo-name">Rochelle Parker</span>
+            <span class="nav-logo-title footer-logo-title">Career Coach</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">Helping tech and engineering professionals build intentional careers — from first job to the boardroom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="speaking.html">Speaking &amp; Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/rochelleparker/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Rochelle Parker. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var uid = window.innerWidth >= 768 ? '356d75e715' : '4edfffda4b';
+  var s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-uid', uid);
+  s.src = 'https://rochelle-parker.kit.com/' + uid + '/index.js';
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

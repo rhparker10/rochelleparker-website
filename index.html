@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rochelle Parker — Career Coach & Executive Mentor</title>
+  <meta name="description" content="Career coaching and executive mentorship for tech and engineering professionals. Land the role, lead the team, build the career.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 100px 40px 96px;
+    }
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 72px;
+      align-items: center;
+    }
+    .hero .eyebrow { color: var(--gold); }
+    .hero h1 {
+      font-size: clamp(36px, 4.5vw, 54px);
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-photo-panel { position: relative; }
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--navy-mid);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-stat-strip {
+      display: flex;
+      gap: 0;
+      margin-top: 16px;
+    }
+    .hero-stat {
+      flex: 1;
+      text-align: center;
+      padding: 16px 8px;
+      border-right: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 0.5px solid var(--gray-2);
+      padding: 0 40px;
+    }
+    .trust-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .trust-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      white-space: nowrap;
+    }
+    .trust-companies {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .trust-logo {
+      height: 22px;
+      width: auto;
+      filter: grayscale(1) opacity(0.35);
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .trust-logo[alt="Apple"],
+    .trust-logo[alt="Cisco"] {
+      height: 34px;
+    }
+    .trust-logo[alt="Boeing"],
+    .trust-logo[alt="Raytheon"] {
+      height: 64px;
+    }
+    .trust-logo[alt="UC Irvine"],
+    .trust-logo[alt="USMC"] {
+      height: 32px;
+    }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 96px 40px; }
+    .section-alt { background: var(--cream); }
+    .section-navy { background: var(--navy); }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .intro-strip p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-style: italic;
+      color: var(--navy);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* ── SERVICES GRID ── */
+    .services-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+    .services-header h2 { font-size: clamp(24px, 3vw, 34px); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-2);
+      border: 0.5px solid var(--gray-2);
+    }
+    .service-card {
+      background: var(--white);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: var(--cream); }
+    .service-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      color: var(--gold);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .service-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    /* ── ABOUT PREVIEW ── */
+    .about-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .about-photos img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 2px;
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--gray-1);
+      border: 0.5px dashed var(--gray-2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-photo-placeholder span {
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .about-text h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 8px; }
+    .about-text p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-of-type { margin-bottom: 28px; }
+    .co-list { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-bottom: 32px; }
+    .co-logo {
+      height: 14px;
+      width: auto;
+      filter: grayscale(1) opacity(0.45);
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .co-logo[alt="Apple"],
+    .co-logo[alt="Cisco"] {
+      height: 20px;
+    }
+    .co-logo[alt="Boeing"],
+    .co-logo[alt="Raytheon"] {
+      height: 38px;
+    }
+    .co-logo[alt="UC Irvine"],
+    .co-logo[alt="USMC"] {
+      height: 20px;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      padding: 36px;
+      background: rgba(255,255,255,0.05);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .testimonial-author-name { font-size: 13px; font-weight: 500; color: var(--white); }
+    .testimonial-author-meta { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 3px; }
+    .testimonials-header h2 { color: var(--white); }
+
+    /* ── EMAIL SIGNUP ── */
+    .signup-section { padding: 96px 40px; background: var(--cream); border-top: 0.5px solid var(--gray-2); }
+    .signup-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .signup-inner h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 10px; }
+    .signup-inner p { font-size: 15px; color: var(--text-mid); margin-bottom: 32px; line-height: 1.7; }
+    .signup-form { display: flex; gap: 10px; }
+    .signup-form input {
+      flex: 1;
+      padding: 13px 16px;
+      border: 0.5px solid var(--gray-2);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero { padding: 72px 24px 64px; }
+      .hero-photo { aspect-ratio: 3/2; }
+      .trust-inner { gap: 20px; flex-wrap: wrap; height: auto; padding: 16px 0; }
+      .section { padding: 64px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-preview { grid-template-columns: 1fr; }
+      .about-photos { order: 1; max-width: 480px; margin: 0 auto; }
+      .about-image { aspect-ratio: 3/2; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .signup-form { flex-direction: column; }
+      .signup-section { padding: 64px 24px; }
+      .intro-strip { padding: 56px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+          <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Rochelle Parker</span>
+        <span class="nav-logo-title">Career Coach</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work-with-me.html">Work With Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="work-with-me.html#sessions" class="nav-cta">Book a session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">Career Coach &nbsp;·&nbsp; Tech &amp; Engineering</span>
+      <h1>Don't just land<br>the role.<br><em>Own your career.</em></h1>
+      <p class="hero-sub">Strategic mentorship from someone who's hired thousands, led 50+ engineers, and built an intentional career across Apple, Boeing, Cisco, and Raytheon.</p>
+      <div class="hero-actions">
+        <a href="work-with-me.html" class="btn btn-gold">Work with me</a>
+        <a href="about.html" class="btn btn-outline-white">My story</a>
+      </div>
+    </div>
+    <div class="hero-photo-panel">
+      <div class="hero-photo">
+        <img src="images/rochelle.jpg" alt="Rochelle Parker">
+      </div>
+      <div class="hero-stat-strip">
+        <div class="hero-stat">
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Years Fortune 100</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Engineers led</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">5.0</div>
+          <div class="hero-stat-label">Mentor rating</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">500%</div>
+          <div class="hero-stat-label">Salary growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label">Experience from</span>
+    <div class="trust-companies">
+      <img class="trust-logo" src="images/logo-apple.png" alt="Apple">
+      <img class="trust-logo" src="images/logo-boeing.png" alt="Boeing">
+      <img class="trust-logo" src="images/logo-cisco.jpg" alt="Cisco">
+      <img class="trust-logo" src="images/logo-raytheon.jpg" alt="Raytheon">
+      <img class="trust-logo" src="images/logo-uci.png" alt="UC Irvine">
+      <img class="trust-logo" src="images/logo-usmc.png" alt="USMC">
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="eyebrow">How I can help</span>
+        <h2>Built for every stage of your career</h2>
+      </div>
+      <a href="work-with-me.html" class="btn-text">See all offerings</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Resume &amp; Job Strategy</h3>
+        <p>Craft a compelling resume that gets past ATS, communicates real impact, and puts you in front of the right hiring managers.</p>
+        <a href="work-with-me.html" class="btn-text">Learn more</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Interview Preparation</h3>
+        <p>Communicate your unique value, stand out from the crowd, and walk into every interview knowing exactly what you bring.</p>
+        <a href="work-with-me.html" class="btn-text">Learn more</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Career Strategy</h3>
+        <p>Navigate career pivots, get promoted, develop your leadership presence, and build the career you actually want — not the one that just happened to you.</p>
+        <a href="work-with-me.html#sessions" class="btn-text">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="about-preview">
+      <div class="about-photos">
+        <img src="images/rochelle_ireland.jpeg" alt="Rochelle in Ireland">
+        <img src="images/rochelle_apple.jpeg" alt="Rochelle at Apple">
+        <img src="images/rochelle_surf.jpeg" alt="Rochelle surfing">
+        <img src="images/rochelle_beach.jpeg" alt="Rochelle at the beach">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">About Rochelle</span>
+        <h2>I've been in your seat — and I know what it takes.</h2>
+        <div class="gold-rule"></div>
+        <p>I'm a career coach with 15+ years at Fortune 100 companies. I've been an individual contributor, a hiring manager, and a senior leader — which means I understand what it takes to grow at every level.</p>
+        <p>I've hired thousands of people, led teams of 50+, and grown my own salary by over 500%. Now I use everything I learned to help professionals in tech and engineering build intentional careers.</p>
+        <div class="co-list">
+          <img src="images/logo-apple.png" alt="Apple" class="co-logo">
+          <img src="images/logo-boeing.png" alt="Boeing" class="co-logo">
+          <img src="images/logo-cisco.jpg" alt="Cisco" class="co-logo">
+          <img src="images/logo-raytheon.jpg" alt="Raytheon" class="co-logo">
+          <img src="images/logo-uci.png" alt="UC Irvine" class="co-logo">
+          <img src="images/logo-usmc.png" alt="USMC" class="co-logo">
+        </div>
+        <a href="about.html" class="btn btn-navy">My full story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="eyebrow" style="color:var(--gold);">What clients say</span>
+      <h2>Results that speak for themselves</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Rochelle is a fantastic mentor. She's incredibly knowledgeable about the tech industry and gave me practical, actionable advice that I could implement right away. Highly recommend.</p>
+        <div class="testimonial-author-name">Ben T.</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Working with Rochelle completely changed how I approach job searching. Her insider perspective from hiring at Apple and Boeing is invaluable. I landed my dream role within two months.</p>
+        <div class="testimonial-author-name">Jasmine K.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section class="signup-section">
+  <div class="signup-inner">
+    <span class="eyebrow">Get $40 off</span>
+    <h2>Subscribe for $40 off your first session</h2>
+    <p>Plus practical advice on job searching, interviews, and building an intentional career in tech.</p>
+    <script async data-uid="3b12c76df9" src="https://rochelle-parker.kit.com/3b12c76df9/index.js"></script>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-mark">
+            <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
+              <polyline points="3,32 16,22 29,32" stroke="rgba(201,168,76,0.28)" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+              <polyline points="3,22 16,12 29,22" stroke="rgba(201,168,76,0.60)" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+              <polyline points="3,12 16,2 29,12" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+            </svg>
+          </div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name footer-logo-name">Rochelle Parker</span>
+            <span class="nav-logo-title footer-logo-title">Career Coach</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">Helping tech and engineering professionals build intentional careers — from first job to the boardroom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work-with-me.html">Work With Me</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="speaking.html">Speaking &amp; Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/rochelleparker/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Rochelle Parker. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var uid = window.innerWidth >= 768 ? '356d75e715' : '4edfffda4b';
+  var s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-uid', uid);
+  s.src = 'https://rochelle-parker.kit.com/' + uid + '/index.js';
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
